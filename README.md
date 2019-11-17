@@ -32,19 +32,17 @@ Download and keep all the following driver files in the drivers folder.
     * screenshot
 
 ## 4. Project setup
-* Open the project in Visual Studio.
-* Restore all NuGet packages and Build the project.
-* Close Visual Studio.
-* Open the project in Visual Studio Code.
-* Install Gauge and C# plugins for execution.
+1. Go to the project folder and run the command `dotnet restore` to restore all Nuget packages
+2. Open the project in Visual Studio Code.
+3. Install Gauge and C# plugins for execution.
 
 ## 5. Running the project
 * From VS Code with the help of Gauge plugin installed.
-* From command prompt with the command - "gauge run specs" from the project file path.
+* From command prompt with the command - `gauge run specs` from the project file path.
 
 ## 6. Known issues / workaround
-1. IWebElement.Click() is not working for the filters, as the click gets submitted to another element. 
+1. `IWebElement.Click()` is not working for the filters, as the click gets submitted to another element. 
     * As a workaround, introduced Advanced User Interactions API to click the element. This is working now.
 2. The filter heading changes each time the product list page is brought up in the WebDriver. (eg: Brand becomes Brands, Display becomes Watch Display Type)
-    * Workaround - Handle FindElement() in try block. Use the changed XPath in the catch block for alternate filter header. (This has not been implemented)
+    * Workaround - Handle `FindElement()` in `try` block. Use the changed XPath in the catch block for alternate filter header. (This has not been implemented)
 3. Commenting out the filtering steps will prevent the Exceptions. This will successfully complete the test run, including writing to csv and displaying product display. 
